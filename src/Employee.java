@@ -58,6 +58,54 @@ this.employees =new Employee[11];
             System.out.println(i + "." + " ФИО сотрудника " + employee.getFIO() + " Отдел " + employee.getDepartment()+ " Зарплата " + employee.getSalary() + " рублей");
         }
     }
+    public void printAllSalary() {
+        int sum = 0;
+
+
+        for (int i = 0; i < id; i++)
+        sum += employees[i].getSalary();
+        System.out.println("Сумма затрат на зарплаты в месяц " + sum + " рублей");
+
+    }
+        public void printMinSalary(){
+    int min = employees[1].getSalary();
+
+    for (int i=0; i <id; i++){
+        if (employees[i].getSalary() < min){
+            min = employees[i].getSalary();
+        }
+
+        }
+            System.out.println("Минимальня зарплата " + min + " рублей");
+    }
+    public void printMaxSalary(){
+        int max = employees[1].getSalary();
+
+        for (int i=0; i <id; i++){
+            if (employees[i].getSalary() > max){
+                max = employees[i].getSalary();
+            }
+        }
+        System.out.println("Максимальная заплата " + max + " рублей");
+    }
+    public void printAverageSalary(){
+    double avarage = 1;
+        for (int i = 0; i < id; i++) {
+
+            avarage +=employees[i].getSalary() / employees.length;
+        }
+        System.out.println("Средняя зарплата составляет "+ avarage +" рублей");
+    }
+    public void printAllFio() {
+        for (int i = 1; i < id; i++) {
+            Employee employee = employees[i];
+            System.out.println(i + "." + " ФИО сотрудника " + employee.getFIO());
+        }
+    }
+
+
+
+
 
 
 
