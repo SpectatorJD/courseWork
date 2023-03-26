@@ -1,0 +1,71 @@
+import java.util.Arrays;
+
+public class Employee {
+    private  Employee[] employees;
+
+    private int id;
+    private String FIO;
+
+    private String department;
+
+    private int salary;
+public Employee(){
+this.employees =new Employee[11];
+}
+
+
+    public Employee(String FIO, String department, int salary) {
+        this.FIO = FIO;
+        this.department = department;
+        this.salary = salary;
+    }
+
+    public String getFIO() {
+        return FIO;
+
+    }
+
+    public String getDepartment() {
+        return department;
+
+    }
+    public int getSalary(){
+        return salary;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+
+    }
+    public void setSalary (int salary){
+        this.salary = salary;
+    }
+
+
+
+
+    public void addEmployee(String FIO, String department, int salary) {
+        if (id >= employees.length) {
+            System.out.println("В книге сотрудников нет места");
+        }
+        Employee newEmployee = new Employee(FIO, department, salary);
+        employees[id++] = newEmployee;
+    }
+
+    public void printAllEmployee() {
+        for (int i = 1; i < id; i++) {
+            Employee employee = employees[i];
+            System.out.println(i + "." + " ФИО сотрудника " + employee.getFIO() + " Отдел " + employee.getDepartment()+ " Зарплата " + employee.getSalary() + " рублей");
+        }
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "StaffBook{" +
+                "employees=" + Arrays.toString(employees) +
+                ", id=" + id +
+                '}';
+    }
+}
