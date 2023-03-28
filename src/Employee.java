@@ -10,7 +10,7 @@ public class Employee {
 
     private int salary;
 public Employee(){
-this.employees =new Employee[11];
+this.employees =new Employee[10];
 }
 
 
@@ -53,7 +53,7 @@ this.employees =new Employee[11];
     }
 
     public void printAllEmployee() {
-        for (int i = 1; i < id; i++) {
+        for (int i = 0; i < id; i++) {
             Employee employee = employees[i];
             System.out.println(i + "." + " ФИО сотрудника " + employee.getFIO() + " Отдел " + employee.getDepartment()+ " Зарплата " + employee.getSalary() + " рублей");
         }
@@ -68,7 +68,7 @@ this.employees =new Employee[11];
 
     }
         public void printMinSalary(){
-    int min = employees[1].getSalary();
+    int min = employees[0].getSalary();
 
     for (int i=0; i <id; i++){
         if (employees[i].getSalary() < min){
@@ -79,7 +79,7 @@ this.employees =new Employee[11];
             System.out.println("Минимальня зарплата " + min + " рублей");
     }
     public void printMaxSalary(){
-        int max = employees[1].getSalary();
+        int max = employees[0].getSalary();
 
         for (int i=0; i <id; i++){
             if (employees[i].getSalary() > max){
@@ -89,7 +89,7 @@ this.employees =new Employee[11];
         System.out.println("Максимальная заплата " + max + " рублей");
     }
     public void printAverageSalary(){
-    double avarage = 1;
+    double avarage = 0;
         for (int i = 0; i < id; i++) {
 
             avarage +=employees[i].getSalary() / employees.length;
@@ -97,7 +97,7 @@ this.employees =new Employee[11];
         System.out.println("Средняя зарплата составляет "+ avarage +" рублей");
     }
     public void printAllFio() {
-        for (int i = 1; i < id; i++) {
+        for (int i = 0; i < id; i++) {
             Employee employee = employees[i];
             System.out.println(i + "." + " ФИО сотрудника " + employee.getFIO());
         }
